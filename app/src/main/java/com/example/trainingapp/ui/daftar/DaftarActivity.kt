@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_daftar.*
 import kotlinx.android.synthetic.main.activity_syarat.*
 
 class DaftarActivity : AppCompatActivity() {
-    val Launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+    private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             result ->
         if(result.resultCode == RESULT_OK){
             checkbox_kebijakan.isChecked = result.data!!.getBooleanExtra("setuju", true)
@@ -51,22 +51,25 @@ class DaftarActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java));
         }
         to_syarat_page.setOnClickListener {
-            Launcher.launch(Intent(this, SyaratActivity::class.java))
+            resultLauncher.launch(Intent(this, SyaratActivity::class.java))
         }
     }
 
     private fun validate(): Boolean {
-        val regexPhone = "^08[0-9]{8,11}$".toRegex()
+        val regexPhone = "^08[0-9]{8,11}\$".toRegex()
         val regexEmail = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\$".toRegex()
-        if (nama.text.toString().length < 4) {
-            nama!!.error = "Input tidak boleh kosong atau kurang dari 4 karakter"
+        val regexText = "^[a-zA-Z]{4,}(?:\\s[a-zA-Z]+)*\$".toRegex()
+        val regexPassword = "^[a-zA-Z0-9!@#\\$%\\^\\&*)\\\\(+=._-]{8,}\$".toRegex()
+
+        if (!regexText.matches(nama.text.toString())) {
+            nama!!.error = "Input tidak boleh mengandung simbol, angka dan harus lebih dari 4 karakter"
             return false
         }
         if (!regexEmail.matches(email.text.toString())) {
             email!!.error = "Input tidak boleh kosong atau format email salah"
             return false
         }
-        if (password.text.toString().length < 8) {
+        if (!regexPassword.matches(password.text.toString())) {
             password!!.error = "Input tidak boleh kosong atau kurang dari 8 karakter"
             return false
         }

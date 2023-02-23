@@ -3,6 +3,7 @@ package com.example.trainingapp.ui.intro
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.trainingapp.MainActivity
 import com.example.trainingapp.R
 import com.example.trainingapp.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_intro.*

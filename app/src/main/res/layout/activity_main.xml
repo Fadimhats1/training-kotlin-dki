@@ -4,14 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/anime_list_rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/anime_card_layout"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/to_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Camera"
+        android:drawableLeft="@drawable/ic_baseline_photo_camera_24"
+        android:padding="8dp"
+        android:layout_margin="4dp"
+        android:drawablePadding="8dp"
+        android:background="@color/gray"
+        android:textColor="@color/white_smoke"
         />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@tools:sample/backgrounds/scenic"
+        />
+
 
 </LinearLayout>
