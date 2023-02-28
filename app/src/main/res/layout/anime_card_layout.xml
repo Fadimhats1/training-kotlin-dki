@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#1C1B1F"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="#1C1B1F">
+
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
+        android:id="@+id/anime_card"
         style="?attr/materialCardViewElevatedStyle"
         android:layout_width="match_parent"
-        android:clickable="true"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardBackgroundColor="#26242a"
-        >
+        android:clickable="true"
+        app:cardBackgroundColor="#26242a">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,28 +25,57 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_160sdp"
                 android:scaleType="centerCrop"
-                tools:src="@tools:sample/backgrounds/scenic"
-                />
+                tools:src="@tools:sample/backgrounds/scenic" />
 
             <LinearLayout
+                android:id="@+id/animate_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingRight="16dp"
+                android:animateLayoutChanges="true"
+                >
+
                 <TextView
                     android:id="@+id/anime_card_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:includeFontPadding="false"
-                    android:textSize="@dimen/_16ssp"
-                    tools:text="@tools:sample/lorem/random"
-                    android:maxLines="1"
+                    android:layout_marginBottom="16dp"
                     android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
                     android:textColor="#E6E1E5"
-                    />
+                    android:textSize="@dimen/_16ssp"
+                    tools:text="@tools:sample/lorem/random" />
 
+                <LinearLayout
+                    android:id="@+id/detail_card_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
+                    <TextView
+                        android:id="@+id/text_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textColor="@color/white_smoke"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
 
+                    <TextView
+                        android:id="@+id/anime_card_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/white_smoke"
+                        tools:text="@tools:sample/lorem/random" />
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>

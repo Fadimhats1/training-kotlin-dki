@@ -8,7 +8,7 @@ data class DkiLoginResponse(
 	val statuscode: String? = null,
 
 	@field:SerializedName("data")
-	val data: Data? = null,
+	val data: DataLogin? = null,
 
 	@field:SerializedName("message")
 	val message: String? = null,
@@ -17,7 +17,7 @@ data class DkiLoginResponse(
 	val status: String? = null
 )
 
-data class Data(
+data class DataLogin(
 
 	@field:SerializedName("cif")
 	val cif: String? = null,

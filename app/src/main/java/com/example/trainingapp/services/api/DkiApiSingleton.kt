@@ -8,7 +8,7 @@ object DkiApiSingleton {
     fun getInstance(): Retrofit {
         return Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build()
     }
-    fun resCall(): IDkiApiService {
+    fun api(): IDkiApiService {
         return DkiApiSingleton.getInstance().create(IDkiApiService::class.java)
     }
 }

@@ -9,4 +9,8 @@ object MalApiSingleton {
     fun getInstance(): Retrofit {
         return Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build()
     }
+
+    fun api():IMalApiService{
+        return MalApiSingleton.getInstance().create(IMalApiService::class.java)
+    }
 }

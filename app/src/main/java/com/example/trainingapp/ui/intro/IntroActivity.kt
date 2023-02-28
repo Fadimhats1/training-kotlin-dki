@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.trainingapp.MainActivity
 import com.example.trainingapp.R
 import com.example.trainingapp.ui.login.LoginActivity
+import com.example.trainingapp.utils.AppPreferences
 import kotlinx.android.synthetic.main.activity_intro.*
 
 class IntroActivity : AppCompatActivity() {
@@ -14,7 +15,8 @@ class IntroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_intro)
 
         supportActionBar?.hide()
-
+        val appPreferences = AppPreferences(this)
+        appPreferences.flagIntro = true
         button_mulai.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)

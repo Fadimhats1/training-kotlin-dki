@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <EditTextPreference
+        app:defaultValue=""
+        app:key="cif"
+        app:title="cif" />
+    <EditTextPreference
+        app:defaultValue=""
+        app:key="tokenlogin"
+        app:title="tokenLogin" />
+    <EditTextPreference
+        app:defaultValue=""
+        app:key="nama"
+        app:title="nama" />
+    <EditTextPreference
+        app:defaultValue=""
+        app:key="customerType"
+        app:title="customerType" />
+    <EditTextPreference
+        app:defaultValue=""
+        app:key="TKDN"
+        app:title="TKDN" />
+    <EditTextPreference
+        app:defaultValue=""
+        app:key="apiKey"
+        app:title="apiKey" />
+    <EditTextPreference
+        app:defaultValue=""
+        app:key="version"
+        app:title="version" />
+    <EditTextPreference
+        app:defaultValue=""
+        app:key="flagIntro"
+        app:title="flagIntro" />
+    <EditTextPreference
+        app:defaultValue=""
+        app:key="firebaseToken"
+        app:title="firebaseToken" />
+</PreferenceScreen>
